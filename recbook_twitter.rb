@@ -41,7 +41,7 @@ class LrRecBook
 
   # ポストする範囲を指定する
   def select
-    @select = rand(1)
+    @select = rand(65)
   end
 end
 
