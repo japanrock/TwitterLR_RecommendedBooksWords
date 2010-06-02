@@ -24,7 +24,6 @@ require File.dirname(__FILE__) + '/twitter_oauth'
 
 class LrRecBook
   attr_reader :selected_recbook_word
-  attr_reader :select
 
   def initialize
     # カレントディレクトリの recbook.yml をロードします
@@ -41,7 +40,7 @@ class LrRecBook
 
   # ポストする範囲を指定する
   def select
-    @select = rand(65)
+    rand(65)
   end
 end
 
@@ -50,7 +49,7 @@ lr_recbook    = LrRecBook.new
 
 content  = lr_recbook.random_select
 head     = lr_recbook.head
-url      = lr_recbook.selected_culture["url"]
-contents = lr_recbook.selected_culture["contents"]
+url      = lr_recbook.selected_recbook_word["url"]
+contents = lr_recbook.selected_recbook_word["contents"]
 
 twitter_oauth.post(head + contents + " - " + url)
