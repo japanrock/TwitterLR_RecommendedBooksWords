@@ -52,4 +52,4 @@ head     = lr_recbook.head
 url      = lr_recbook.selected_recbook_word["url"]
 contents = lr_recbook.selected_recbook_word["contents"]
 
-twitter_oauth.post(head + contents + " - " + url)
+twitter_oauth.post(head + contents + " " + url)
